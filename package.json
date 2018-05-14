@@ -1,0 +1,30 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "Webpack project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jafajardo/Webpack.git"
+  },
+  "keywords": [
+    "Webpack"
+  ],
+  "author": "Joseph Fajardo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jafajardo/Webpack/issues"
+  },
+  "homepage": "https://github.com/jafajardo/Webpack#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0"
+  }
+}
