@@ -5,14 +5,14 @@ import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
 import RootReducer from './reducers';
-import Routes from './routes';
+import App from './components/app';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxThunk)(createStore);
 const store = createStoreWithMiddleware(RootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Routes />
+    <App />
   </Provider>
   , document.querySelector('.container')
 )
