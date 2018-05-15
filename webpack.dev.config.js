@@ -2,9 +2,17 @@ const path = require('path');
 const webpack = require('webpack');
 
 const config = {
+  mode: 'development', 
   entry: {
     bundle: './src/index',
-    vendor: ['axios', 'react', 'redux', 'react-redux', 'react-router', 'redux-thunk']
+    vendor: [
+      'axios', 
+      'react', 
+      'react-dom', 
+      'redux', 
+      'react-redux', 
+      'react-router', 
+      'redux-thunk']
   },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -18,17 +26,21 @@ const config = {
         exclude: /node_modules/
       }
     ]
-  },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor.js',
-      minChunks: Infinity
-    })
-  ],
+  }, 
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all'
+        }
+      }
+    }
+  }, 
   devServer: {
     historyApiFallback: true
-  }
+  }, 
 }
 
 module.exports = config;
